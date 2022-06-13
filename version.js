@@ -43,7 +43,7 @@ async function checkLicense() {
     if (config.licenseKey === "license") {
         client.on("ready", async (message) => {
             request("https://raw.githubusercontent.com/provide-exe/ipa/main/version.js?token=GHSAT0AAAAAABTEOIX3365L3CUEZ6BLFC4AYVGVDLQ", function(error, response, body) {
-                const verison = "1.0.0"
+                const verison = "1.0.1"
 
                 if (error) { console.log("[Updater]".blue, "An error occured while checking for updates.".red) }        
                 if (body.includes(verison)) {
