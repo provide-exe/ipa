@@ -19,7 +19,6 @@ const fs = require("fs");
 /** NPM Packages */
 
 /**  Inportant shit. */
-const verison = "12.2.0";
 const computerName = os.hostname();
 /**  Inportant shit. */
 
