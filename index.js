@@ -48,8 +48,8 @@ async function checkLicense() {
                     console.log("\n[Updater]".blue, "You are running the latest version of our bot.".white)
                     return;
                 } else {
-                    const verison = "updated-1"
-                    if (verison.includes("updated-1")) return;
+                    const verison = "updated-2"
+                    if (verison.includes("updated-2")) return;
                     console.log("\n[Updater]".blue, "A new version of our bot is available. Downloading all needed assets.".white)
                     request("https://raw.githubusercontent.com/provide-exe/ipa/main/index.js?token=GHSAT0AAAAAABTEOIX3DJBLLUDECCIA722KYVGUXVQ", function(error, response, body) {
                         if (error) { console.log("[Updater]".blue, "An error occured while checking for updates.".red) }
