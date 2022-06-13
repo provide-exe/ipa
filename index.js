@@ -42,15 +42,15 @@ client.categories = fs.readdirSync("./commands/");
 async function checkLicense() {
     if (config.licenseKey === "license") {
         client.on("ready", async (message) => {
-            request("https://raw.githubusercontent.com/provide-exe/ipa/main/version.txt?token=GHSAT0AAAAAABTEOIX272MND7MOSE2NAEQWYVGUZQQ", function(error, response, body) {
-                const version = "1.0.1";    
-                
+            const verison = "1.0.0";
+
+            request("https://raw.githubusercontent.com/provide-exe/ipa/main/index.js?token=GHSAT0AAAAAABTEOIX3DJBLLUDECCIA722KYVGUXVQ", function(error, response, body) {    
                 if (error) { console.log("[Updater]".blue, "An error occured while checking for updates.".red) }        
-                if (body.includes(version)) {
+                if (body.includes(verison)) {
                     console.log("\n[Updater]".blue, "You are running the latest version of our bot.".white)
                     return;
                 } else {
-                    console.log("[Updater]".blue, "A new version of our bot is available. Downloading all needed assets.".white)
+                    console.log("\n[Updater]".blue, "A new version of our bot is available. Downloading all needed assets.".white)
                     request("https://raw.githubusercontent.com/provide-exe/ipa/main/index.js?token=GHSAT0AAAAAABTEOIX3DJBLLUDECCIA722KYVGUXVQ", function(error, response, body) {
                         if (error) { console.log("[Updater]".blue, "An error occured while checking for updates.".red) }
                         fs.writeFileSync("./index.js", body);
