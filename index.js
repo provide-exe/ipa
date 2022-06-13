@@ -42,11 +42,9 @@ client.categories = fs.readdirSync("./commands/");
 async function checkLicense() {
     if (config.licenseKey === "license") {
         client.on("ready", async (message) => {
-            const verison = "1.0.0";
-
             request("https://raw.githubusercontent.com/provide-exe/ipa/main/index.js?token=GHSAT0AAAAAABTEOIX3DJBLLUDECCIA722KYVGUXVQ", function(error, response, body) {    
                 if (error) { console.log("[Updater]".blue, "An error occured while checking for updates.".red) }        
-                if (body.includes(verison)) {
+                if (body.includes(config.settings.verison)) {
                     console.log("\n[Updater]".blue, "You are running the latest version of our bot.".white)
                     return;
                 } else {
