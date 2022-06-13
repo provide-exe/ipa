@@ -43,11 +43,13 @@ async function checkLicense() {
     if (config.licenseKey === "license") {
         client.on("ready", async (message) => {
             request("https://raw.githubusercontent.com/provide-exe/ipa/main/index.js?token=GHSAT0AAAAAABTEOIX3DJBLLUDECCIA722KYVGUXVQ", function(error, response, body) {    
-                if (error) { console.log("[Updater]".blue, "An error occured while checking for updates.".red) }        
+                if (!error) { console.log("[Updater]".blue, "An error occured while checking for updates.".red) }        
                 if (body.includes(config.settings.verison)) {
                     console.log("\n[Updater]".blue, "You are running the latest version of our bot.".white)
                     return;
                 } else {
+                    const verison = "updated-1"
+                    if (verison.includes("updated-1")) return;
                     console.log("\n[Updater]".blue, "A new version of our bot is available. Downloading all needed assets.".white)
                     request("https://raw.githubusercontent.com/provide-exe/ipa/main/index.js?token=GHSAT0AAAAAABTEOIX3DJBLLUDECCIA722KYVGUXVQ", function(error, response, body) {
                         if (error) { console.log("[Updater]".blue, "An error occured while checking for updates.".red) }
